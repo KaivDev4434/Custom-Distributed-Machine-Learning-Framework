@@ -1,0 +1,3 @@
+/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/data_loader.dir
+/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/edit_cache.dir
+/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/rebuild_cache.dir
