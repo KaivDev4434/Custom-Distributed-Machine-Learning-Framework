@@ -1,0 +1,284 @@
+Currently Loaded Modules:
+  1) easybuild      4) null                  7) zlib/1.2.13    10) ncurses/6.4  13) cURL/8.3.0        16) CMake/3.29.3
+  2) slurm/wulver   5) Miniforge3/24.1.2-0   8) binutils/2.40  11) bzip2/1.0.8  14) XZ/5.4.4          17) CUDA/12.4.0
+  3) wulver         6) GCCcore/13.2.0        9) GCC/13.2.0     12) OpenSSL/1.1  15) libarchive/3.7.2
+
+
+
+kd454@n0048:/course/2025/spring/ds/642/bader/kd454/Project$ ./scripts/build.sh
+CMake Error at /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:814 (message):
+  Compiling the CUDA compiler identification source file
+  "CMakeCUDACompilerId.cu" failed.
+
+  Compiler: /apps/easybuild/software/CUDA/12.4.0/bin/nvcc
+
+  Build flags:
+
+  Id flags: --keep;--keep-dir;tmp -v
+
+
+
+  The output was:
+
+  2
+
+  #$ _NVVM_BRANCH_=nvvm
+
+  #$ _NVVM_BRANCH_SUFFIX_=
+
+  #$ _SPACE_=
+
+  #$ _CUDART_=cudart
+
+  #$ _HERE_=/apps/easybuild/software/CUDA/12.4.0/bin
+
+  #$ _THERE_=/apps/easybuild/software/CUDA/12.4.0/bin
+
+  #$ _TARGET_SIZE_=
+
+  #$ _TARGET_DIR_=
+
+  #$ _TARGET_DIR_=targets/x86_64-linux
+
+  #$ TOP=/apps/easybuild/software/CUDA/12.4.0/bin/..
+
+  #$
+  NVVMIR_LIBRARY_DIR=/apps/easybuild/software/CUDA/12.4.0/bin/../nvvm/libdevice
+
+
+  #$
+  LD_LIBRARY_PATH=/apps/easybuild/software/CUDA/12.4.0/bin/../lib:/apps/easybuild/software/CUDA/12.4.0/nvvm/lib64:/apps/easybuild/software/CUDA/12.4.0/extras/CUPTI/lib64:/apps/easybuild/software/CUDA/12.4.0/lib:/apps/easybuild/software/libarchive/3.7.2-GCCcore-13.2.0/lib:/apps/easybuild/software/XZ/5.4.4-GCCcore-13.2.0/lib:/apps/easybuild/software/cURL/8.3.0-GCCcore-13.2.0/lib:/apps/easybuild/software/OpenSSL/1.1/lib:/apps/easybuild/software/bzip2/1.0.8-GCCcore-13.2.0/lib:/apps/easybuild/software/ncurses/6.4-GCCcore-13.2.0/lib:/apps/easybuild/software/binutils/2.40-GCCcore-13.2.0/lib:/apps/easybuild/software/zlib/1.2.13-GCCcore-13.2.0/lib:/apps/easybuild/software/GCCcore/13.2.0/lib64:/apps/slurm/current/lib64/slurm:/apps/slurm/current/lib64
+
+
+  #$
+  PATH=/apps/easybuild/software/CUDA/12.4.0/bin/../nvvm/bin:/apps/easybuild/software/CUDA/12.4.0/bin:/apps/easybuild/software/CUDA/12.4.0/nvvm/bin:/apps/easybuild/software/CUDA/12.4.0/bin:/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/bin:/apps/easybuild/software/libarchive/3.7.2-GCCcore-13.2.0/bin:/apps/easybuild/software/XZ/5.4.4-GCCcore-13.2.0/bin:/apps/easybuild/software/cURL/8.3.0-GCCcore-13.2.0/bin:/apps/easybuild/software/OpenSSL/1.1/bin:/apps/easybuild/software/bzip2/1.0.8-GCCcore-13.2.0/bin:/apps/easybuild/software/ncurses/6.4-GCCcore-13.2.0/bin:/apps/easybuild/software/binutils/2.40-GCCcore-13.2.0/bin:/apps/easybuild/software/GCCcore/13.2.0/bin:/mmfs1/apps/easybuild/software/Miniforge3/24.1.2-0/condabin:/apps/easybuild/software/Miniforge3/24.1.2-0:/apps/easybuild/software/Miniforge3/24.1.2-0/sbin:/apps/easybuild/software/Miniforge3/24.1.2-0/bin:/home/kd454/.local/bin:/home/kd454/bin:/apps/site/bin:/apps/slurm/current/sbin:/apps/slurm/current/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/TurboVNC/bin:/opt/dell/srvadmin/bin
+
+
+  #$
+  INCLUDES="-I/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include"
+
+
+  #$ LIBRARIES=
+  "-L/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/lib/stubs"
+  "-L/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/lib"
+
+  #$ CUDAFE_FLAGS=
+
+  #$ PTXAS_FLAGS=
+
+  #$ rm tmp/a_dlink.reg.c
+
+  #$ gcc -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++ -D__CUDACC__
+  -D__NVCC__
+  "-I/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include"
+  -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=4
+  -D__CUDACC_VER_BUILD__=99 -D__CUDA_API_VER_MAJOR__=12
+  -D__CUDA_API_VER_MINOR__=4 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include
+  "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o
+  "tmp/CMakeCUDACompilerId.cpp4.ii"
+
+  #$ cudafe++ --c++17 --gnu_version=130200 --display_error_number
+  --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name
+  "/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/3.29.3/CompilerIdCUDA/CMakeCUDACompilerId.cu"
+  --allow_managed --m64 --parse_templates --gen_c_file_name
+  "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name
+  "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file
+  --module_id_file_name "tmp/CMakeCUDACompilerId.module_id"
+  "tmp/CMakeCUDACompilerId.cpp4.ii"
+
+  /usr/include/bits/floatn.h(86): error: invalid combination of type
+  specifiers
+
+    typedef __float128 _Float128;
+                       ^
+
+
+
+  /usr/include/bits/floatn-common.h(214): error: invalid combination of type
+  specifiers
+
+    typedef float _Float32;
+                  ^
+
+
+
+  /usr/include/bits/floatn-common.h(251): error: invalid combination of type
+  specifiers
+
+    typedef double _Float64;
+                   ^
+
+
+
+  /usr/include/bits/floatn-common.h(268): error: invalid combination of type
+  specifiers
+
+    typedef double _Float32x;
+                   ^
+
+
+
+  /usr/include/bits/floatn-common.h(285): error: invalid combination of type
+  specifiers
+
+    typedef long double _Float64x;
+                        ^
+
+
+
+  5 errors detected in the compilation of "CMakeCUDACompilerId.cu".
+
+  # --error 0x2 --
+
+
+
+
+
+Call Stack (most recent call first):
+  /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)
+  /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCUDACompiler.cmake:131 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+CMake Error at /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:814 (message):
+  Compiling the CUDA compiler identification source file
+  "CMakeCUDACompilerId.cu" failed.
+
+  Compiler: /apps/easybuild/software/CUDA/12.4.0/bin/nvcc
+
+  Build flags:
+
+  Id flags: --keep;--keep-dir;tmp -v
+
+
+
+  The output was:
+
+  2
+
+  #$ _NVVM_BRANCH_=nvvm
+
+  #$ _NVVM_BRANCH_SUFFIX_=
+
+  #$ _SPACE_=
+
+  #$ _CUDART_=cudart
+
+  #$ _HERE_=/apps/easybuild/software/CUDA/12.4.0/bin
+
+  #$ _THERE_=/apps/easybuild/software/CUDA/12.4.0/bin
+
+  #$ _TARGET_SIZE_=
+
+  #$ _TARGET_DIR_=
+
+  #$ _TARGET_DIR_=targets/x86_64-linux
+
+  #$ TOP=/apps/easybuild/software/CUDA/12.4.0/bin/..
+
+  #$
+  NVVMIR_LIBRARY_DIR=/apps/easybuild/software/CUDA/12.4.0/bin/../nvvm/libdevice
+
+
+  #$
+  LD_LIBRARY_PATH=/apps/easybuild/software/CUDA/12.4.0/bin/../lib:/apps/easybuild/software/CUDA/12.4.0/nvvm/lib64:/apps/easybuild/software/CUDA/12.4.0/extras/CUPTI/lib64:/apps/easybuild/software/CUDA/12.4.0/lib:/apps/easybuild/software/libarchive/3.7.2-GCCcore-13.2.0/lib:/apps/easybuild/software/XZ/5.4.4-GCCcore-13.2.0/lib:/apps/easybuild/software/cURL/8.3.0-GCCcore-13.2.0/lib:/apps/easybuild/software/OpenSSL/1.1/lib:/apps/easybuild/software/bzip2/1.0.8-GCCcore-13.2.0/lib:/apps/easybuild/software/ncurses/6.4-GCCcore-13.2.0/lib:/apps/easybuild/software/binutils/2.40-GCCcore-13.2.0/lib:/apps/easybuild/software/zlib/1.2.13-GCCcore-13.2.0/lib:/apps/easybuild/software/GCCcore/13.2.0/lib64:/apps/slurm/current/lib64/slurm:/apps/slurm/current/lib64
+
+
+  #$
+  PATH=/apps/easybuild/software/CUDA/12.4.0/bin/../nvvm/bin:/apps/easybuild/software/CUDA/12.4.0/bin:/apps/easybuild/software/CUDA/12.4.0/nvvm/bin:/apps/easybuild/software/CUDA/12.4.0/bin:/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/bin:/apps/easybuild/software/libarchive/3.7.2-GCCcore-13.2.0/bin:/apps/easybuild/software/XZ/5.4.4-GCCcore-13.2.0/bin:/apps/easybuild/software/cURL/8.3.0-GCCcore-13.2.0/bin:/apps/easybuild/software/OpenSSL/1.1/bin:/apps/easybuild/software/bzip2/1.0.8-GCCcore-13.2.0/bin:/apps/easybuild/software/ncurses/6.4-GCCcore-13.2.0/bin:/apps/easybuild/software/binutils/2.40-GCCcore-13.2.0/bin:/apps/easybuild/software/GCCcore/13.2.0/bin:/mmfs1/apps/easybuild/software/Miniforge3/24.1.2-0/condabin:/apps/easybuild/software/Miniforge3/24.1.2-0:/apps/easybuild/software/Miniforge3/24.1.2-0/sbin:/apps/easybuild/software/Miniforge3/24.1.2-0/bin:/home/kd454/.local/bin:/home/kd454/bin:/apps/site/bin:/apps/slurm/current/sbin:/apps/slurm/current/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/TurboVNC/bin:/opt/dell/srvadmin/bin
+
+
+  #$
+  INCLUDES="-I/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include"
+
+
+  #$ LIBRARIES=
+  "-L/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/lib/stubs"
+  "-L/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/lib"
+
+  #$ CUDAFE_FLAGS=
+
+  #$ PTXAS_FLAGS=
+
+  #$ rm tmp/a_dlink.reg.c
+
+  #$ gcc -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++ -D__CUDACC__
+  -D__NVCC__
+  "-I/apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include"
+  -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=4
+  -D__CUDACC_VER_BUILD__=99 -D__CUDA_API_VER_MAJOR__=12
+  -D__CUDA_API_VER_MINOR__=4 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include
+  "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o
+  "tmp/CMakeCUDACompilerId.cpp4.ii"
+
+  #$ cudafe++ --c++17 --gnu_version=130200 --display_error_number
+  --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name
+  "/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/3.29.3/CompilerIdCUDA/CMakeCUDACompilerId.cu"
+  --allow_managed --m64 --parse_templates --gen_c_file_name
+  "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name
+  "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file
+  --module_id_file_name "tmp/CMakeCUDACompilerId.module_id"
+  "tmp/CMakeCUDACompilerId.cpp4.ii"
+
+  /usr/include/bits/floatn.h(86): error: invalid combination of type
+  specifiers
+
+    typedef __float128 _Float128;
+                       ^
+
+
+
+  /usr/include/bits/floatn-common.h(214): error: invalid combination of type
+  specifiers
+
+    typedef float _Float32;
+                  ^
+
+
+
+  /usr/include/bits/floatn-common.h(251): error: invalid combination of type
+  specifiers
+
+    typedef double _Float64;
+                   ^
+
+
+
+  /usr/include/bits/floatn-common.h(268): error: invalid combination of type
+  specifiers
+
+    typedef double _Float32x;
+                   ^
+
+
+
+  /usr/include/bits/floatn-common.h(285): error: invalid combination of type
+  specifiers
+
+    typedef long double _Float64x;
+                        ^
+
+
+
+  5 errors detected in the compilation of "CMakeCUDACompilerId.cu".
+
+  # --error 0x2 --
+
+
+
+
+
+Call Stack (most recent call first):
+  /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)
+  /mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/share/cmake-3.29/Modules/CMakeDetermineCUDACompiler.cmake:131 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+make: *** [Makefile:206: cmake_check_build_system] Error 1
+Build completed successfully!
+The data_loader and nn_model modules are available in build/python/
+kd454@n0048:/course/2025/spring/ds/642/bader/kd454/Project$

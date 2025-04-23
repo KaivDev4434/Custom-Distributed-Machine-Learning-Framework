@@ -1,0 +1,12 @@
+{
+  "custom": {
+    "total_time": 0.03,
+    "avg_batch_time": 0.0003,
+    "samples_per_sec": 193827.41
+  },
+  "pytorch": {
+    "total_time": 0.42,
+    "avg_batch_time": 0.0042,
+    "samples_per_sec": 15408.47
+  }
+}

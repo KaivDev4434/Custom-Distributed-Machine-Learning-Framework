@@ -12,12 +12,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp" "CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o" "gcc" "CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

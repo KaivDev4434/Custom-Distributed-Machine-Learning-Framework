@@ -8,8 +8,11 @@ cd build
 cmake ..
 make -j$(nproc)
 
-# Create data directory if it doesn't exist
-mkdir -p ../data/mnist
+# Create necessary directories
+cd ..
+mkdir -p data/mnist
+mkdir -p models
+mkdir -p results
 
 echo "Build completed successfully!"
-echo "The data_loader module is available in build/python/" 
+echo "The data_loader and nn_model modules are available in build/python/" 

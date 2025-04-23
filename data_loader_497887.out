@@ -1,0 +1,11 @@
+Loading modules
+All modules loaded successfully
+Activating env apc_proj
+Env activated successfully
+Running on host: n0004
+Number of OMP threads: 4
+Available memory:               total        used        free      shared  buff/cache   available
+Mem:          503Gi        23Gi       432Gi       121Mi        47Gi       477Gi
+Swap:          15Gi       113Mi        15Gi
+Starting data loader test at Wed Apr 23 11:22:13 EDT 2025
+Finished at Wed Apr 23 11:23:08 EDT 2025
