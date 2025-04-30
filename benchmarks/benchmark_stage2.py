@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 import sys
 import os
+import numpy as np
 
 # Add the build directory to Python path
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "build", "lib"))
@@ -18,25 +19,30 @@ print(f"Using CUDA version: {CUDA_VERSION}")
 class PyTorchModel(nn.Module):
     def __init__(self):
         super(PyTorchModel, self).__init__()
-        self.conv1 = nn.Conv2d(1, 32, 3, 1)
-        self.conv2 = nn.Conv2d(32, 64, 3, 1)
-        self.fc1 = nn.Linear(9216, 128)
+        self.conv1 = nn.Conv2d(1, 32, 3, 1) # 28x28 -> 26x26
+        self.conv2 = nn.Conv2d(32, 64, 3, 1) # 13x13 -> 11x11
+        # After pooling twice: 5x5 with 64 channels = 1600
+        self.fc1 = nn.Linear(1600, 128)
         self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
         x = torch.relu(self.conv1(x))
-        x = torch.max_pool2d(x, 2)
+        x = torch.max_pool2d(x, 2) # 26x26 -> 13x13
         x = torch.relu(self.conv2(x))
-        x = torch.max_pool2d(x, 2)
-        x = torch.flatten(x, 1)
+        x = torch.max_pool2d(x, 2) # 11x11 -> 5x5
+        x = torch.flatten(x, 1) # Flatten: 64 channels * 5*5 = 1600
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
         return x
 
 def benchmark_custom_model():
-    model = model_module.CustomModel()
-    # Create dummy input
-    input_data = torch.randn(64, 1, 28, 28).cuda()
+    # Create model with correct dimensions for MNIST
+    # Input size: 28*28 = 784, Hidden size: 128, Output classes: 10
+    model = model_module.Model(784, 128, 10)
+    
+    # Create dummy input - must be flattened for the model and converted to numpy
+    input_tensor = torch.randn(64, 784).cuda()
+    input_data = input_tensor.cpu().numpy().astype(np.float32)
     
     # Check CUDA device
     device = torch.cuda.current_device()
@@ -57,6 +63,7 @@ def benchmark_custom_model():
 
 def benchmark_pytorch_model():
     model = PyTorchModel().cuda()
+    # Create 4D input for CNN (batch_size, channels, height, width)
     input_data = torch.randn(64, 1, 28, 28).cuda()
     
     # Warm up
