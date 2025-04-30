@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /course/2025/spring/ds/642/bader/kd454/Project/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/mmfs1/apps/easybuild/software/CMake/3.29.3-GCCcore-13.2.0/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -84,6 +84,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -130,17 +175,43 @@ data_loader/fast:
 .PHONY : data_loader/fast
 
 #=============================================================================
-# Target rules for targets named nn_model
+# Target rules for targets named model
 
 # Build rule for target.
-nn_model: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nn_model
-.PHONY : nn_model
+model: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 model
+.PHONY : model
 
 # fast build rule for target.
-nn_model/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/build
-.PHONY : nn_model/fast
+model/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/build
+.PHONY : model/fast
+
+#=============================================================================
+# Target rules for targets named gradient_sync
+
+# Build rule for target.
+gradient_sync: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gradient_sync
+.PHONY : gradient_sync
+
+# fast build rule for target.
+gradient_sync/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/build
+.PHONY : gradient_sync/fast
+
+#=============================================================================
+# Target rules for targets named utils
+
+# Build rule for target.
+utils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils
+.PHONY : utils
+
+# fast build rule for target.
+utils/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/build
+.PHONY : utils/fast
 
 src/data_loader/DataLoader.o: src/data_loader/DataLoader.cpp.o
 .PHONY : src/data_loader/DataLoader.o
@@ -172,6 +243,7 @@ src/data_loader/bindings.o: src/data_loader/bindings.cpp.o
 # target to build an object file
 src/data_loader/bindings.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/src/data_loader/bindings.cpp.o
 .PHONY : src/data_loader/bindings.cpp.o
 
 src/data_loader/bindings.i: src/data_loader/bindings.cpp.i
@@ -180,6 +252,7 @@ src/data_loader/bindings.i: src/data_loader/bindings.cpp.i
 # target to preprocess a source file
 src/data_loader/bindings.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/src/data_loader/bindings.cpp.i
 .PHONY : src/data_loader/bindings.cpp.i
 
 src/data_loader/bindings.s: src/data_loader/bindings.cpp.s
@@ -188,6 +261,7 @@ src/data_loader/bindings.s: src/data_loader/bindings.cpp.s
 # target to generate assembly for a file
 src/data_loader/bindings.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/src/data_loader/bindings.cpp.s
 .PHONY : src/data_loader/bindings.cpp.s
 
 src/model/Model.o: src/model/Model.cpp.o
@@ -195,7 +269,7 @@ src/model/Model.o: src/model/Model.cpp.o
 
 # target to build an object file
 src/model/Model.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/Model.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/Model.cpp.o
 .PHONY : src/model/Model.cpp.o
 
 src/model/Model.i: src/model/Model.cpp.i
@@ -203,7 +277,7 @@ src/model/Model.i: src/model/Model.cpp.i
 
 # target to preprocess a source file
 src/model/Model.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/Model.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/Model.cpp.i
 .PHONY : src/model/Model.cpp.i
 
 src/model/Model.s: src/model/Model.cpp.s
@@ -211,7 +285,7 @@ src/model/Model.s: src/model/Model.cpp.s
 
 # target to generate assembly for a file
 src/model/Model.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/Model.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/Model.cpp.s
 .PHONY : src/model/Model.cpp.s
 
 src/model/bindings.o: src/model/bindings.cpp.o
@@ -219,7 +293,7 @@ src/model/bindings.o: src/model/bindings.cpp.o
 
 # target to build an object file
 src/model/bindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/bindings.cpp.o
 .PHONY : src/model/bindings.cpp.o
 
 src/model/bindings.i: src/model/bindings.cpp.i
@@ -227,7 +301,7 @@ src/model/bindings.i: src/model/bindings.cpp.i
 
 # target to preprocess a source file
 src/model/bindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/bindings.cpp.i
 .PHONY : src/model/bindings.cpp.i
 
 src/model/bindings.s: src/model/bindings.cpp.s
@@ -235,7 +309,7 @@ src/model/bindings.s: src/model/bindings.cpp.s
 
 # target to generate assembly for a file
 src/model/bindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/bindings.cpp.s
 .PHONY : src/model/bindings.cpp.s
 
 src/model/cuda_kernels.o: src/model/cuda_kernels.cu.o
@@ -243,7 +317,7 @@ src/model/cuda_kernels.o: src/model/cuda_kernels.cu.o
 
 # target to build an object file
 src/model/cuda_kernels.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/cuda_kernels.cu.o
 .PHONY : src/model/cuda_kernels.cu.o
 
 src/model/cuda_kernels.i: src/model/cuda_kernels.cu.i
@@ -251,7 +325,7 @@ src/model/cuda_kernels.i: src/model/cuda_kernels.cu.i
 
 # target to preprocess a source file
 src/model/cuda_kernels.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/cuda_kernels.cu.i
 .PHONY : src/model/cuda_kernels.cu.i
 
 src/model/cuda_kernels.s: src/model/cuda_kernels.cu.s
@@ -259,8 +333,32 @@ src/model/cuda_kernels.s: src/model/cuda_kernels.cu.s
 
 # target to generate assembly for a file
 src/model/cuda_kernels.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/cuda_kernels.cu.s
 .PHONY : src/model/cuda_kernels.cu.s
+
+src/model/test_gradient_sync.o: src/model/test_gradient_sync.cu.o
+.PHONY : src/model/test_gradient_sync.o
+
+# target to build an object file
+src/model/test_gradient_sync.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.o
+.PHONY : src/model/test_gradient_sync.cu.o
+
+src/model/test_gradient_sync.i: src/model/test_gradient_sync.cu.i
+.PHONY : src/model/test_gradient_sync.i
+
+# target to preprocess a source file
+src/model/test_gradient_sync.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.i
+.PHONY : src/model/test_gradient_sync.cu.i
+
+src/model/test_gradient_sync.s: src/model/test_gradient_sync.cu.s
+.PHONY : src/model/test_gradient_sync.s
+
+# target to generate assembly for a file
+src/model/test_gradient_sync.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.s
+.PHONY : src/model/test_gradient_sync.cu.s
 
 # Help Target
 help:
@@ -269,9 +367,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... data_loader"
-	@echo "... nn_model"
+	@echo "... gradient_sync"
+	@echo "... model"
+	@echo "... utils"
 	@echo "... src/data_loader/DataLoader.o"
 	@echo "... src/data_loader/DataLoader.i"
 	@echo "... src/data_loader/DataLoader.s"
@@ -287,6 +391,9 @@ help:
 	@echo "... src/model/cuda_kernels.o"
 	@echo "... src/model/cuda_kernels.i"
 	@echo "... src/model/cuda_kernels.s"
+	@echo "... src/model/test_gradient_sync.o"
+	@echo "... src/model/test_gradient_sync.i"
+	@echo "... src/model/test_gradient_sync.s"
 .PHONY : help
 
 

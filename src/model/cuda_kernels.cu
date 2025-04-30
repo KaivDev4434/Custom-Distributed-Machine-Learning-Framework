@@ -152,6 +152,20 @@ __global__ void softmax_cross_entropy_backward_kernel(const float* probs, const 
     }
 }
 
+// Gradient synchronization kernel
+__global__ void gradient_sync_kernel(float* gradients, int size, int num_gpus) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx < size) {
+        // Sum gradients from all GPUs
+        float sum = 0.0f;
+        for (int gpu = 0; gpu < num_gpus; ++gpu) {
+            sum += gradients[gpu * size + idx];
+        }
+        // Average the gradients
+        gradients[idx] = sum / num_gpus;
+    }
+}
+
 // Wrapper functions to launch kernels
 
 cudaError_t matmul(const float* A, const float* B, float* C, int M, int N, int K, cudaStream_t stream) {
@@ -199,5 +213,14 @@ cudaError_t softmax_cross_entropy_grad(const float* probs, const int* labels, fl
     int numBlocks = (batch_size * num_classes + blockSize - 1) / blockSize;
     
     softmax_cross_entropy_backward_kernel<<<numBlocks, blockSize, 0, stream>>>(probs, labels, grad_input, batch_size, num_classes);
+    return cudaGetLastError();
+}
+
+// Wrapper function for gradient synchronization
+cudaError_t synchronize_gradients(float* gradients, int size, int num_gpus, cudaStream_t stream) {
+    int blockSize = BLOCK_SIZE;
+    int numBlocks = (size + blockSize - 1) / blockSize;
+    
+    gradient_sync_kernel<<<numBlocks, blockSize, 0, stream>>>(gradients, size, num_gpus);
     return cudaGetLastError();
 } 

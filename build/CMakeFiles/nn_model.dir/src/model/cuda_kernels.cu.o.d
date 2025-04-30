@@ -1,27 +1,18 @@
 CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o : /course/2025/spring/ds/642/bader/kd454/Project/src/model/cuda_kernels.cu \
     /usr/include/stdc-predef.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/cuda_runtime.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/host_config.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/cuda_runtime.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/host_config.h \
     /usr/include/features.h \
     /usr/include/sys/cdefs.h \
     /usr/include/bits/wordsize.h \
     /usr/include/bits/long-double.h \
     /usr/include/gnu/stubs.h \
     /usr/include/gnu/stubs-64.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/builtin_types.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/device_types.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/host_defines.h \
-    /usr/include/ctype.h \
-    /usr/include/bits/types.h \
-    /usr/include/bits/typesizes.h \
-    /usr/include/endian.h \
-    /usr/include/bits/endian.h \
-    /usr/include/bits/byteswap.h \
-    /usr/include/bits/uintn-identity.h \
-    /usr/include/bits/types/locale_t.h \
-    /usr/include/bits/types/__locale_t.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/driver_types.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/vector_types.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/builtin_types.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/device_types.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/host_defines.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/driver_types.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/vector_types.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/limits.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/syslimits.h \
     /usr/include/limits.h \
@@ -33,12 +24,12 @@ CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o : /course/2025/spring/ds/642
     /usr/include/bits/xopen_lim.h \
     /usr/include/bits/uio_lim.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stddef.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/surface_types.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/texture_types.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/library_types.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/channel_descriptor.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/cuda_runtime_api.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/cuda_device_runtime_api.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/surface_types.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/texture_types.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/library_types.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/channel_descriptor.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/cuda_runtime_api.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/cuda_device_runtime_api.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/stdlib.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/cstdlib \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -49,12 +40,20 @@ CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o : /course/2025/spring/ds/642
     /usr/include/bits/waitstatus.h \
     /usr/include/bits/floatn.h \
     /usr/include/bits/floatn-common.h \
+    /usr/include/bits/types/locale_t.h \
+    /usr/include/bits/types/__locale_t.h \
     /usr/include/sys/types.h \
+    /usr/include/bits/types.h \
+    /usr/include/bits/typesizes.h \
     /usr/include/bits/types/clock_t.h \
     /usr/include/bits/types/clockid_t.h \
     /usr/include/bits/types/time_t.h \
     /usr/include/bits/types/timer_t.h \
     /usr/include/bits/stdint-intn.h \
+    /usr/include/endian.h \
+    /usr/include/bits/endian.h \
+    /usr/include/bits/byteswap.h \
+    /usr/include/bits/uintn-identity.h \
     /usr/include/sys/select.h \
     /usr/include/bits/select.h \
     /usr/include/bits/types/sigset_t.h \
@@ -67,10 +66,10 @@ CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o : /course/2025/spring/ds/642
     /usr/include/alloca.h \
     /usr/include/bits/stdlib-float.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/bits/std_abs.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/driver_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/vector_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/vector_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/common_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/driver_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/vector_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/vector_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/common_functions.h \
     /usr/include/string.h \
     /usr/include/strings.h \
     /usr/include/time.h \
@@ -92,7 +91,7 @@ CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o : /course/2025/spring/ds/642
     /usr/include/bits/stdio_lim.h \
     /usr/include/bits/sys_errlist.h \
     /usr/include/assert.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/math_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/math_functions.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/math.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/cmath \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/bits/cpp_type_traits.h \
@@ -107,39 +106,39 @@ CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o : /course/2025/spring/ds/642
     /usr/include/bits/mathcalls.h \
     /usr/include/bits/mathcalls-narrow.h \
     /usr/include/bits/iscanonical.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/math_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/device_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/device_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/device_atomic_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/device_atomic_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/device_double_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/device_double_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_20_atomic_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_20_atomic_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_32_atomic_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_32_atomic_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_35_atomic_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_60_atomic_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_60_atomic_functions.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_20_intrinsics.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_20_intrinsics.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_30_intrinsics.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_30_intrinsics.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_32_intrinsics.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_32_intrinsics.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_35_intrinsics.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_61_intrinsics.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/sm_61_intrinsics.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/sm_70_rt.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/sm_70_rt.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/sm_80_rt.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/sm_80_rt.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/sm_90_rt.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/sm_90_rt.hpp \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/texture_indirect_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/surface_indirect_functions.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/crt/cudacc_ext.h \
-    /apps/easybuild/software/CUDA/12.4.0/bin/../targets/x86_64-linux/include/device_launch_parameters.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/math_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/device_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/device_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/device_atomic_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/device_atomic_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/device_double_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/device_double_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_20_atomic_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_20_atomic_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_32_atomic_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_32_atomic_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_35_atomic_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_60_atomic_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_60_atomic_functions.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_20_intrinsics.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_20_intrinsics.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_30_intrinsics.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_30_intrinsics.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_32_intrinsics.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_32_intrinsics.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_35_intrinsics.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_61_intrinsics.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/sm_61_intrinsics.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/sm_70_rt.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/sm_70_rt.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/sm_80_rt.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/sm_80_rt.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/sm_90_rt.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/sm_90_rt.hpp \
+    /apps/easybuild/software/CUDA/12.0.0/include/texture_indirect_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/surface_indirect_functions.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/crt/cudacc_ext.h \
+    /apps/easybuild/software/CUDA/12.0.0/include/device_launch_parameters.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/utility \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/bits/stl_relops.h \
     /mmfs1/apps/easybuild/software/GCCcore/12.2.0/include/c++/12.2.0/bits/stl_pair.h \

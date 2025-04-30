@@ -1,0 +1,20 @@
+=== Parallel Computing Benchmarking Project ===
+Building and running all benchmarks
+==============================================
+Using conda environment: apc_proj
+Step 1: Building the project...
+=== Build Environment ===
+Using modules:
+  CUDA: nvcc: NVIDIA (R) Cuda compiler driver
+  GCC: gcc (GCC) 13.2.0
+  CMake: cmake version 3.29.3
+Using conda environment: apc_proj
+  Python: Python 3.13.3
+=========================
+Configuring with CMake...
+-- Configuring incomplete, errors occurred!
+-- Generating done (0.3s)
+Building the project...
+-- The CXX compiler identification is GNU 13.2.0
+-- Configuring incomplete, errors occurred!
+Build failed. Please check the output for errors.

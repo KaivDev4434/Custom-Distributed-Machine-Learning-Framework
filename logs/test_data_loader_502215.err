@@ -1,0 +1,1 @@
+/var/spool/slurmd/job502215/slurm_script: line 25: 124839 Segmentation fault      (core dumped) python python/test_data_loader.py

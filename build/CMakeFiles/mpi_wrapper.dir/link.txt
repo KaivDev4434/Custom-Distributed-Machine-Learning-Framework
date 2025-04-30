@@ -1,0 +1,1 @@
+/apps/easybuild/software/GCCcore/12.2.0/bin/c++ -fPIC -shared -Wl,-soname,mpi_wrapper.so -o python/mpi_wrapper.so CMakeFiles/mpi_wrapper.dir/src/mpi/mpi_wrapper.cpp.o  -Wl,-rpath,/apps/easybuild/software/Miniforge3/24.1.2-0/lib /apps/easybuild/software/OpenMPI/4.1.4-GCC-12.2.0/lib/libmpi.so /apps/easybuild/software/Miniforge3/24.1.2-0/lib/libpython3.10.so 

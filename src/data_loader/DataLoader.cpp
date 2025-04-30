@@ -4,9 +4,12 @@
 #include <random>
 #include <algorithm>
 #include <omp.h>
+#include <mutex>
+#include <vector>
 
 DataLoader::DataLoader(const std::string& data_path, int batch_size, int num_workers)
     : data_path_(data_path), batch_size_(batch_size), num_workers_(num_workers), current_idx_(0) {
+    // Initialize OpenMP with the requested number of threads
     omp_set_num_threads(num_workers_);
 }
 
@@ -49,22 +52,25 @@ void DataLoader::load_mnist(const std::string& images_file, const std::string& l
     images_.resize(num_images * rows * cols);
     labels_.resize(num_images);
 
-    // Read data in parallel using OpenMP
+    // Read all image data into a buffer first
+    std::vector<unsigned char> image_buffer(num_images * rows * cols);
+    images.read(reinterpret_cast<char*>(image_buffer.data()), num_images * rows * cols);
+
+    // Read all label data into a buffer
+    std::vector<unsigned char> label_buffer(num_labels);
+    labels.read(reinterpret_cast<char*>(label_buffer.data()), num_labels);
+
+    // Now process the data in parallel
     #pragma omp parallel for
-    for (int i = 0; i < num_images; ++i) {
-        // Read image
-        std::vector<unsigned char> image(rows * cols);
-        images.read(reinterpret_cast<char*>(image.data()), rows * cols);
-        
-        // Read label
-        unsigned char label;
-        labels.read(reinterpret_cast<char*>(&label), 1);
-        
-        // Convert to float and normalize
-        for (int j = 0; j < rows * cols; ++j) {
-            images_[i * rows * cols + j] = static_cast<float>(image[j]) / 255.0f;
+    for (size_t i = 0; i < num_images; ++i) {
+        // Process image data
+        for (size_t j = 0; j < rows * cols; ++j) {
+            size_t idx = i * rows * cols + j;
+            images_[idx] = static_cast<float>(image_buffer[idx]) / 255.0f;
         }
-        labels_[i] = static_cast<int>(label);
+        
+        // Process label data
+        labels_[i] = static_cast<int>(label_buffer[i]);
     }
 
     normalize_images();
@@ -72,6 +78,10 @@ void DataLoader::load_mnist(const std::string& images_file, const std::string& l
 }
 
 std::pair<std::vector<float>, std::vector<int>> DataLoader::get_next_batch() {
+    // Use a mutex to protect access to current_idx_ and ensure thread safety
+    static std::mutex mutex;
+    std::lock_guard<std::mutex> lock(mutex);
+    
     if (current_idx_ >= images_.size() / (28 * 28)) {
         current_idx_ = 0;
         shuffle_data();
@@ -83,6 +93,7 @@ std::pair<std::vector<float>, std::vector<int>> DataLoader::get_next_batch() {
 
     #pragma omp parallel for
     for (int i = 0; i < batch_size; ++i) {
+        // Each thread works on its own section of the batch, no mutex needed here
         std::copy(images_.begin() + (current_idx_ + i) * 28 * 28,
                  images_.begin() + (current_idx_ + i + 1) * 28 * 28,
                  batch_images.begin() + i * 28 * 28);
@@ -106,13 +117,23 @@ void DataLoader::normalize_images() {
 }
 
 void DataLoader::shuffle_data() {
+    // Create indices for the shuffle operation
     std::vector<size_t> indices(images_.size() / (28 * 28));
     std::iota(indices.begin(), indices.end(), 0);
     
-    std::random_device rd;
-    std::mt19937 g(rd());
+    // Use a consistent seed for reproducibility
+    static std::mutex shuffle_mutex;
+    std::mt19937 g;
+    
+    {
+        std::lock_guard<std::mutex> lock(shuffle_mutex);
+        std::random_device rd;
+        g.seed(rd());
+    }
+    
     std::shuffle(indices.begin(), indices.end(), g);
 
+    // Create temporary vectors for the shuffled data
     std::vector<float> shuffled_images(images_.size());
     std::vector<int> shuffled_labels(labels_.size());
 
@@ -124,6 +145,11 @@ void DataLoader::shuffle_data() {
         shuffled_labels[i] = labels_[indices[i]];
     }
 
-    images_ = std::move(shuffled_images);
-    labels_ = std::move(shuffled_labels);
+    // Use mutex to protect the data swap
+    static std::mutex data_mutex;
+    {
+        std::lock_guard<std::mutex> lock(data_mutex);
+        images_ = std::move(shuffled_images);
+        labels_ = std::move(shuffled_labels);
+    }
 } 

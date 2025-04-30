@@ -1,0 +1,87 @@
+train-images-idx3-ubyte exists and is valid
+train-labels-idx1-ubyte exists and is valid
+Testing custom data loader...
+Batch 1:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [2 9 7 3 6]
+Batch 2:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [0 7 2 0 5]
+Batch 3:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [2 5 3 7 1]
+Batch 4:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [5 9 2 4 7]
+Batch 5:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [5 5 7 0 3]
+Batch 6:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [0 8 0 2 1]
+Batch 7:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [8 7 2 8 6]
+Batch 8:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [6 5 4 0 0]
+Batch 9:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [7 0 3 8 4]
+Batch 10:
+  Images shape: (64, 28, 28)
+  Labels shape: (64,)
+  Labels: [6 4 6 2 3]
+Custom loader time: 0.0859 seconds
+
+Testing PyTorch data loader...
+Batch 1:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [6 8 1 6 2]
+Batch 2:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [2 2 7 3 2]
+Batch 3:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [3 0 9 7 7]
+Batch 4:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [7 2 8 4 5]
+Batch 5:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [1 8 6 0 5]
+Batch 6:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [8 3 1 2 2]
+Batch 7:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [0 6 3 2 5]
+Batch 8:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [6 5 2 7 3]
+Batch 9:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [8 3 0 2 1]
+Batch 10:
+  Images shape: torch.Size([64, 1, 28, 28])
+  Labels shape: torch.Size([64])
+  Labels: [3 3 7 1 2]
+PyTorch loader time: 1.6431 seconds

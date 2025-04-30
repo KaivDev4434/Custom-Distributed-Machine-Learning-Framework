@@ -73,29 +73,29 @@ CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o: CMakeFiles/data_loa
 CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o: /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/DataLoader.cpp
 CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o: CMakeFiles/data_loader.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o"
-	/apps/easybuild/software/GCCcore/13.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o -MF CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o.d -o CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o -c /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/DataLoader.cpp
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o -MF CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o.d -o CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o -c /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/DataLoader.cpp
 
 CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.i"
-	/apps/easybuild/software/GCCcore/13.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/DataLoader.cpp > CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.i
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/DataLoader.cpp > CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.i
 
 CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.s"
-	/apps/easybuild/software/GCCcore/13.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/DataLoader.cpp -o CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.s
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/DataLoader.cpp -o CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.s
 
 CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o: CMakeFiles/data_loader.dir/flags.make
 CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o: /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp
 CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o: CMakeFiles/data_loader.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o"
-	/apps/easybuild/software/GCCcore/13.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o -MF CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o.d -o CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o -c /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o -MF CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o.d -o CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o -c /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp
 
 CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.i"
-	/apps/easybuild/software/GCCcore/13.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp > CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.i
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp > CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.i
 
 CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.s"
-	/apps/easybuild/software/GCCcore/13.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp -o CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.s
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /course/2025/spring/ds/642/bader/kd454/Project/src/data_loader/bindings.cpp -o CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.s
 
 # Object files for target data_loader
 data_loader_OBJECTS = \
@@ -105,18 +105,20 @@ data_loader_OBJECTS = \
 # External object files for target data_loader
 data_loader_EXTERNAL_OBJECTS =
 
-python/data_loader.so: CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o
-python/data_loader.so: CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o
-python/data_loader.so: CMakeFiles/data_loader.dir/build.make
-python/data_loader.so: /project/kjc59/kd454/envs/apc_proj/lib/libpython3.13.so
-python/data_loader.so: /mmfs1/apps/easybuild/software/GCCcore/13.2.0/lib64/libgomp.so
-python/data_loader.so: /lib64/libpthread.so
-python/data_loader.so: CMakeFiles/data_loader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library python/data_loader.so"
+lib/libdata_loader.so: CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o
+lib/libdata_loader.so: CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o
+lib/libdata_loader.so: CMakeFiles/data_loader.dir/build.make
+lib/libdata_loader.so: /mmfs1/apps/easybuild/software/GCCcore/12.2.0/lib64/libgomp.so
+lib/libdata_loader.so: /lib64/libpthread.so
+lib/libdata_loader.so: /project/kjc59/kd454/envs/apc_proj/lib/libpython3.12.so
+lib/libdata_loader.so: CMakeFiles/data_loader.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library lib/libdata_loader.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/data_loader.dir/link.txt --verbose=$(VERBOSE)
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E make_directory /course/2025/spring/ds/642/bader/kd454/Project/build/src
+	/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E copy /course/2025/spring/ds/642/bader/kd454/Project/build/lib/libdata_loader.so /course/2025/spring/ds/642/bader/kd454/Project/build/lib/libmodel.so /course/2025/spring/ds/642/bader/kd454/Project/build/lib/libgradient_sync.so /course/2025/spring/ds/642/bader/kd454/Project/build/lib/libutils.so /course/2025/spring/ds/642/bader/kd454/Project/build/src
 
 # Rule to build all files generated by this target.
-CMakeFiles/data_loader.dir/build: python/data_loader.so
+CMakeFiles/data_loader.dir/build: lib/libdata_loader.so
 .PHONY : CMakeFiles/data_loader.dir/build
 
 CMakeFiles/data_loader.dir/clean:

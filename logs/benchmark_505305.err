@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/benchmarks/benchmark_stage1.py", line 4, in <module>
+    from src.data_loader import DataLoader
+ModuleNotFoundError: No module named 'src'
+Traceback (most recent call last):
+  File "/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/benchmarks/benchmark_stage2.py", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/benchmarks/benchmark_stage3.py", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/benchmarks/benchmark_full.py", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'

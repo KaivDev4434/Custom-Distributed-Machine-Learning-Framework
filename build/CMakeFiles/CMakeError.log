@@ -1,22 +1,22 @@
-Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4412c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4412c.dir/build.make CMakeFiles/cmTC_4412c.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_79ea2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_79ea2.dir/build.make CMakeFiles/cmTC_79ea2.dir/build
 gmake[1]: Entering directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4412c.dir/src.cxx.o
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_4412c.dir/src.cxx.o -c /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_4412c
-/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4412c.dir/link.txt --verbose=1
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++ CMakeFiles/cmTC_4412c.dir/src.cxx.o -o cmTC_4412c 
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: CMakeFiles/cmTC_4412c.dir/src.cxx.o: in function `main':
-src.cxx:(.text+0x2d): undefined reference to `pthread_create'
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
+Building C object CMakeFiles/cmTC_79ea2.dir/src.c.o
+/apps/easybuild/software/GCCcore/12.2.0/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIC  -o CMakeFiles/cmTC_79ea2.dir/src.c.o -c /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_79ea2
+/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79ea2.dir/link.txt --verbose=1
+/apps/easybuild/software/GCCcore/12.2.0/bin/cc -fPIC  CMakeFiles/cmTC_79ea2.dir/src.c.o -o cmTC_79ea2 
+/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: CMakeFiles/cmTC_79ea2.dir/src.c.o: in function `main':
+src.c:(.text+0x2f): undefined reference to `pthread_create'
+/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.c:(.text+0x3b): undefined reference to `pthread_detach'
+/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.c:(.text+0x47): undefined reference to `pthread_cancel'
+/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.c:(.text+0x58): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [CMakeFiles/cmTC_4412c.dir/build.make:99: cmTC_4412c] Error 1
+gmake[1]: *** [CMakeFiles/cmTC_79ea2.dir/build.make:99: cmTC_79ea2] Error 1
 gmake[1]: Leaving directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-gmake: *** [Makefile:127: cmTC_4412c/fast] Error 2
+gmake: *** [Makefile:127: cmTC_79ea2/fast] Error 2
 
 
 Source file was:
@@ -43,78 +43,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b05ce/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b05ce.dir/build.make CMakeFiles/cmTC_b05ce.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_dac4a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dac4a.dir/build.make CMakeFiles/cmTC_dac4a.dir/build
 gmake[1]: Entering directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b05ce.dir/CheckFunctionExists.cxx.o
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_b05ce.dir/CheckFunctionExists.cxx.o -c /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_b05ce
-/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b05ce.dir/link.txt --verbose=1
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_b05ce.dir/CheckFunctionExists.cxx.o -o cmTC_b05ce  -lpthreads 
+Building C object CMakeFiles/cmTC_dac4a.dir/CheckFunctionExists.c.o
+/apps/easybuild/software/GCCcore/12.2.0/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_dac4a.dir/CheckFunctionExists.c.o -c /mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dac4a
+/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dac4a.dir/link.txt --verbose=1
+/apps/easybuild/software/GCCcore/12.2.0/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_dac4a.dir/CheckFunctionExists.c.o -o cmTC_dac4a  -lpthreads 
 /apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: cannot find -lpthreads: No such file or directory
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [CMakeFiles/cmTC_b05ce.dir/build.make:99: cmTC_b05ce] Error 1
+gmake[1]: *** [CMakeFiles/cmTC_dac4a.dir/build.make:99: cmTC_dac4a] Error 1
 gmake[1]: Leaving directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-gmake: *** [Makefile:127: cmTC_b05ce/fast] Error 2
-
-
-
-Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_887e4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_887e4.dir/build.make CMakeFiles/cmTC_887e4.dir/build
-gmake[1]: Entering directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_887e4.dir/src.cxx.o
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_887e4.dir/src.cxx.o -c /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_887e4
-/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_887e4.dir/link.txt --verbose=1
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++ CMakeFiles/cmTC_887e4.dir/src.cxx.o -o cmTC_887e4 
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: CMakeFiles/cmTC_887e4.dir/src.cxx.o: in function `main':
-src.cxx:(.text+0x2d): undefined reference to `pthread_create'
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
-collect2: error: ld returned 1 exit status
-gmake[1]: *** [CMakeFiles/cmTC_887e4.dir/build.make:99: cmTC_887e4] Error 1
-gmake[1]: Leaving directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-gmake: *** [Makefile:127: cmTC_887e4/fast] Error 2
-
-
-Source file was:
-#include <pthread.h>
-
-static void* test_func(void* data)
-{
-  return data;
-}
-
-int main(void)
-{
-  pthread_t thread;
-  pthread_create(&thread, NULL, test_func, NULL);
-  pthread_detach(thread);
-  pthread_cancel(thread);
-  pthread_join(thread, NULL);
-  pthread_atfork(NULL, NULL, NULL);
-  pthread_exit(NULL);
-
-  return 0;
-}
-
-Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ae1fa/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ae1fa.dir/build.make CMakeFiles/cmTC_ae1fa.dir/build
-gmake[1]: Entering directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ae1fa.dir/CheckFunctionExists.cxx.o
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_ae1fa.dir/CheckFunctionExists.cxx.o -c /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_ae1fa
-/mmfs1/apps/easybuild/software/CMake/3.24.3-GCCcore-12.2.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae1fa.dir/link.txt --verbose=1
-/apps/easybuild/software/GCCcore/13.2.0/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_ae1fa.dir/CheckFunctionExists.cxx.o -o cmTC_ae1fa  -lpthreads 
-/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ld: cannot find -lpthreads: No such file or directory
-collect2: error: ld returned 1 exit status
-gmake[1]: *** [CMakeFiles/cmTC_ae1fa.dir/build.make:99: cmTC_ae1fa] Error 1
-gmake[1]: Leaving directory '/mmfs1/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/CMakeTmp'
-gmake: *** [Makefile:127: cmTC_ae1fa/fast] Error 2
+gmake: *** [Makefile:127: cmTC_dac4a/fast] Error 2
 
 
 

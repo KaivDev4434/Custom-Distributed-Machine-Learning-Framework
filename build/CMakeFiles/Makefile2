@@ -64,7 +64,9 @@ CMAKE_BINARY_DIR = /course/2025/spring/ds/642/bader/kd454/Project/build
 
 # The main recursive "all" target.
 all: CMakeFiles/data_loader.dir/all
-all: CMakeFiles/nn_model.dir/all
+all: CMakeFiles/model.dir/all
+all: CMakeFiles/gradient_sync.dir/all
+all: CMakeFiles/utils.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,14 +75,18 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/data_loader.dir/clean
-clean: CMakeFiles/nn_model.dir/clean
+clean: CMakeFiles/model.dir/clean
+clean: CMakeFiles/gradient_sync.dir/clean
+clean: CMakeFiles/utils.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/data_loader.dir
 
 # All Build rule for target.
-CMakeFiles/data_loader.dir/all:
+CMakeFiles/data_loader.dir/all: CMakeFiles/utils.dir/all
+CMakeFiles/data_loader.dir/all: CMakeFiles/gradient_sync.dir/all
+CMakeFiles/data_loader.dir/all: CMakeFiles/model.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=1,2,3 "Built target data_loader"
@@ -88,7 +94,7 @@ CMakeFiles/data_loader.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/data_loader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/data_loader.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 0
 .PHONY : CMakeFiles/data_loader.dir/rule
@@ -103,30 +109,82 @@ CMakeFiles/data_loader.dir/clean:
 .PHONY : CMakeFiles/data_loader.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/nn_model.dir
+# Target rules for target CMakeFiles/model.dir
 
 # All Build rule for target.
-CMakeFiles/nn_model.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=4,5,6,7 "Built target nn_model"
-.PHONY : CMakeFiles/nn_model.dir/all
+CMakeFiles/model.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=6,7,8,9 "Built target model"
+.PHONY : CMakeFiles/model.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/nn_model.dir/rule: cmake_check_build_system
+CMakeFiles/model.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nn_model.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/model.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 0
-.PHONY : CMakeFiles/nn_model.dir/rule
+.PHONY : CMakeFiles/model.dir/rule
 
 # Convenience name for target.
-nn_model: CMakeFiles/nn_model.dir/rule
-.PHONY : nn_model
+model: CMakeFiles/model.dir/rule
+.PHONY : model
 
 # clean rule for target.
-CMakeFiles/nn_model.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/clean
-.PHONY : CMakeFiles/nn_model.dir/clean
+CMakeFiles/model.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/clean
+.PHONY : CMakeFiles/model.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/gradient_sync.dir
+
+# All Build rule for target.
+CMakeFiles/gradient_sync.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=4,5 "Built target gradient_sync"
+.PHONY : CMakeFiles/gradient_sync.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/gradient_sync.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gradient_sync.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 0
+.PHONY : CMakeFiles/gradient_sync.dir/rule
+
+# Convenience name for target.
+gradient_sync: CMakeFiles/gradient_sync.dir/rule
+.PHONY : gradient_sync
+
+# clean rule for target.
+CMakeFiles/gradient_sync.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/clean
+.PHONY : CMakeFiles/gradient_sync.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/utils.dir
+
+# All Build rule for target.
+CMakeFiles/utils.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=10,11 "Built target utils"
+.PHONY : CMakeFiles/utils.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/utils.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/utils.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles 0
+.PHONY : CMakeFiles/utils.dir/rule
+
+# Convenience name for target.
+utils: CMakeFiles/utils.dir/rule
+.PHONY : utils
+
+# clean rule for target.
+CMakeFiles/utils.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/clean
+.PHONY : CMakeFiles/utils.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

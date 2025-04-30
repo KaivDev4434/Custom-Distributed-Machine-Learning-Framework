@@ -1,0 +1,13 @@
+=== Environment Setup ===
+Using modules:
+  CUDA: nvcc: NVIDIA (R) Cuda compiler driver
+  GCC: gcc (GCC) 12.2.0
+  CMake: cmake version 3.24.3
+Using conda environment: apc_proj
+  Python: Python 3.10.14
+  PyTorch: 
+=========================
+Running Stage 1 Benchmark (Data Loading)...
+Running Stage 2 Benchmark (CUDA Model)...
+Running Stage 3 Benchmark (CUDA Gradient Sync)...
+Running Full Pipeline Benchmark...

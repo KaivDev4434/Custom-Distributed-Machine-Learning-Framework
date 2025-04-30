@@ -1,0 +1,45 @@
+cmake_minimum_required(VERSION 3.10)
+project(MpiWrapperAlt LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find required packages
+find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+find_package(MPI REQUIRED)
+
+# Manually set pybind11 include directory
+execute_process(
+    COMMAND "${Python3_EXECUTABLE}" -c "import pybind11; print(pybind11.get_include())"
+    OUTPUT_VARIABLE PYBIND11_INCLUDE_DIR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# Include directories
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${Python3_INCLUDE_DIRS}
+    ${PYBIND11_INCLUDE_DIR}
+    ${MPI_CXX_INCLUDE_PATH}
+)
+
+# Add MPI wrapper library
+add_library(mpi_wrapper_alt SHARED
+    src/mpi/mpi_wrapper_alt.cpp
+)
+
+# Set MPI wrapper properties
+target_link_libraries(mpi_wrapper_alt PRIVATE
+    ${MPI_CXX_LIBRARIES}
+    ${Python3_LIBRARIES}
+)
+
+# Add include directories specifically for MPI wrapper
+target_include_directories(mpi_wrapper_alt PRIVATE
+    ${MPI_CXX_INCLUDE_PATH}
+)
+
+set_target_properties(mpi_wrapper_alt PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/python"
+    PREFIX ""
+)
