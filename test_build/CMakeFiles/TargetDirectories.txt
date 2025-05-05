@@ -1,0 +1,10 @@
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/data_loader.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/model.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/gradient_sync.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/utils.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/edit_cache.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/rebuild_cache.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/list_install_components.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/install.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/install/local.dir
+/course/2025/spring/ds/642/bader/kd454/Project/test_build/CMakeFiles/install/strip.dir

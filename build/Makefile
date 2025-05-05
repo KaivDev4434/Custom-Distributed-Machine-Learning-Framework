@@ -162,138 +162,50 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named data_loader
+# Target rules for targets named cuda_kernels
 
 # Build rule for target.
-data_loader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 data_loader
-.PHONY : data_loader
+cuda_kernels: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cuda_kernels
+.PHONY : cuda_kernels
 
 # fast build rule for target.
-data_loader/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/build
-.PHONY : data_loader/fast
+cuda_kernels/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuda_kernels.dir/build.make CMakeFiles/cuda_kernels.dir/build
+.PHONY : cuda_kernels/fast
 
 #=============================================================================
-# Target rules for targets named model
+# Target rules for targets named nn_model
 
 # Build rule for target.
-model: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 model
-.PHONY : model
+nn_model: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nn_model
+.PHONY : nn_model
 
 # fast build rule for target.
-model/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/build
-.PHONY : model/fast
+nn_model/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/build
+.PHONY : nn_model/fast
 
 #=============================================================================
-# Target rules for targets named gradient_sync
+# Target rules for targets named test_model
 
 # Build rule for target.
-gradient_sync: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gradient_sync
-.PHONY : gradient_sync
+test_model: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_model
+.PHONY : test_model
 
 # fast build rule for target.
-gradient_sync/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/build
-.PHONY : gradient_sync/fast
-
-#=============================================================================
-# Target rules for targets named utils
-
-# Build rule for target.
-utils: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils
-.PHONY : utils
-
-# fast build rule for target.
-utils/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/build
-.PHONY : utils/fast
-
-src/data_loader/DataLoader.o: src/data_loader/DataLoader.cpp.o
-.PHONY : src/data_loader/DataLoader.o
-
-# target to build an object file
-src/data_loader/DataLoader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.o
-.PHONY : src/data_loader/DataLoader.cpp.o
-
-src/data_loader/DataLoader.i: src/data_loader/DataLoader.cpp.i
-.PHONY : src/data_loader/DataLoader.i
-
-# target to preprocess a source file
-src/data_loader/DataLoader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.i
-.PHONY : src/data_loader/DataLoader.cpp.i
-
-src/data_loader/DataLoader.s: src/data_loader/DataLoader.cpp.s
-.PHONY : src/data_loader/DataLoader.s
-
-# target to generate assembly for a file
-src/data_loader/DataLoader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/DataLoader.cpp.s
-.PHONY : src/data_loader/DataLoader.cpp.s
-
-src/data_loader/bindings.o: src/data_loader/bindings.cpp.o
-.PHONY : src/data_loader/bindings.o
-
-# target to build an object file
-src/data_loader/bindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/src/data_loader/bindings.cpp.o
-.PHONY : src/data_loader/bindings.cpp.o
-
-src/data_loader/bindings.i: src/data_loader/bindings.cpp.i
-.PHONY : src/data_loader/bindings.i
-
-# target to preprocess a source file
-src/data_loader/bindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/src/data_loader/bindings.cpp.i
-.PHONY : src/data_loader/bindings.cpp.i
-
-src/data_loader/bindings.s: src/data_loader/bindings.cpp.s
-.PHONY : src/data_loader/bindings.s
-
-# target to generate assembly for a file
-src/data_loader/bindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_loader.dir/build.make CMakeFiles/data_loader.dir/src/data_loader/bindings.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/src/data_loader/bindings.cpp.s
-.PHONY : src/data_loader/bindings.cpp.s
-
-src/model/Model.o: src/model/Model.cpp.o
-.PHONY : src/model/Model.o
-
-# target to build an object file
-src/model/Model.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/Model.cpp.o
-.PHONY : src/model/Model.cpp.o
-
-src/model/Model.i: src/model/Model.cpp.i
-.PHONY : src/model/Model.i
-
-# target to preprocess a source file
-src/model/Model.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/Model.cpp.i
-.PHONY : src/model/Model.cpp.i
-
-src/model/Model.s: src/model/Model.cpp.s
-.PHONY : src/model/Model.s
-
-# target to generate assembly for a file
-src/model/Model.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/Model.cpp.s
-.PHONY : src/model/Model.cpp.s
+test_model/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_model.dir/build.make CMakeFiles/test_model.dir/build
+.PHONY : test_model/fast
 
 src/model/bindings.o: src/model/bindings.cpp.o
 .PHONY : src/model/bindings.o
 
 # target to build an object file
 src/model/bindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/bindings.cpp.o
 .PHONY : src/model/bindings.cpp.o
 
 src/model/bindings.i: src/model/bindings.cpp.i
@@ -301,7 +213,7 @@ src/model/bindings.i: src/model/bindings.cpp.i
 
 # target to preprocess a source file
 src/model/bindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/bindings.cpp.i
 .PHONY : src/model/bindings.cpp.i
 
 src/model/bindings.s: src/model/bindings.cpp.s
@@ -309,56 +221,32 @@ src/model/bindings.s: src/model/bindings.cpp.s
 
 # target to generate assembly for a file
 src/model/bindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nn_model.dir/build.make CMakeFiles/nn_model.dir/src/model/bindings.cpp.s
 .PHONY : src/model/bindings.cpp.s
 
-src/model/cuda_kernels.o: src/model/cuda_kernels.cu.o
-.PHONY : src/model/cuda_kernels.o
+test/test_model.o: test/test_model.cpp.o
+.PHONY : test/test_model.o
 
 # target to build an object file
-src/model/cuda_kernels.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/cuda_kernels.cu.o
-.PHONY : src/model/cuda_kernels.cu.o
+test/test_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_model.dir/build.make CMakeFiles/test_model.dir/test/test_model.cpp.o
+.PHONY : test/test_model.cpp.o
 
-src/model/cuda_kernels.i: src/model/cuda_kernels.cu.i
-.PHONY : src/model/cuda_kernels.i
-
-# target to preprocess a source file
-src/model/cuda_kernels.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/cuda_kernels.cu.i
-.PHONY : src/model/cuda_kernels.cu.i
-
-src/model/cuda_kernels.s: src/model/cuda_kernels.cu.s
-.PHONY : src/model/cuda_kernels.s
-
-# target to generate assembly for a file
-src/model/cuda_kernels.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model/cuda_kernels.cu.s
-.PHONY : src/model/cuda_kernels.cu.s
-
-src/model/test_gradient_sync.o: src/model/test_gradient_sync.cu.o
-.PHONY : src/model/test_gradient_sync.o
-
-# target to build an object file
-src/model/test_gradient_sync.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.o
-.PHONY : src/model/test_gradient_sync.cu.o
-
-src/model/test_gradient_sync.i: src/model/test_gradient_sync.cu.i
-.PHONY : src/model/test_gradient_sync.i
+test/test_model.i: test/test_model.cpp.i
+.PHONY : test/test_model.i
 
 # target to preprocess a source file
-src/model/test_gradient_sync.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.i
-.PHONY : src/model/test_gradient_sync.cu.i
+test/test_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_model.dir/build.make CMakeFiles/test_model.dir/test/test_model.cpp.i
+.PHONY : test/test_model.cpp.i
 
-src/model/test_gradient_sync.s: src/model/test_gradient_sync.cu.s
-.PHONY : src/model/test_gradient_sync.s
+test/test_model.s: test/test_model.cpp.s
+.PHONY : test/test_model.s
 
 # target to generate assembly for a file
-src/model/test_gradient_sync.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gradient_sync.dir/build.make CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.s
-.PHONY : src/model/test_gradient_sync.cu.s
+test/test_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_model.dir/build.make CMakeFiles/test_model.dir/test/test_model.cpp.s
+.PHONY : test/test_model.cpp.s
 
 # Help Target
 help:
@@ -372,28 +260,15 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... data_loader"
-	@echo "... gradient_sync"
-	@echo "... model"
-	@echo "... utils"
-	@echo "... src/data_loader/DataLoader.o"
-	@echo "... src/data_loader/DataLoader.i"
-	@echo "... src/data_loader/DataLoader.s"
-	@echo "... src/data_loader/bindings.o"
-	@echo "... src/data_loader/bindings.i"
-	@echo "... src/data_loader/bindings.s"
-	@echo "... src/model/Model.o"
-	@echo "... src/model/Model.i"
-	@echo "... src/model/Model.s"
+	@echo "... cuda_kernels"
+	@echo "... nn_model"
+	@echo "... test_model"
 	@echo "... src/model/bindings.o"
 	@echo "... src/model/bindings.i"
 	@echo "... src/model/bindings.s"
-	@echo "... src/model/cuda_kernels.o"
-	@echo "... src/model/cuda_kernels.i"
-	@echo "... src/model/cuda_kernels.s"
-	@echo "... src/model/test_gradient_sync.o"
-	@echo "... src/model/test_gradient_sync.i"
-	@echo "... src/model/test_gradient_sync.s"
+	@echo "... test/test_model.o"
+	@echo "... test/test_model.i"
+	@echo "... test/test_model.s"
 .PHONY : help
 
 

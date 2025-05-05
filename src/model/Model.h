@@ -1,23 +1,26 @@
 #pragma once
 
-#include <vector>
-#include <string>
-#include <memory>
 #include <cuda_runtime.h>
+#include <cublas_v2.h>
+#include <string>
 
 class Model {
 public:
+    // Updated constructor to match Python interface
     Model(int input_size, int hidden_size, int num_classes);
-    ~Model();
+    ~Model() noexcept;
 
     // Forward pass
-    void forward(const float* input, int batch_size);
+    void forward(const float* input);
     
     // Backward pass
-    void backward(const int* labels, int batch_size);
+    void backward(const float* input, const int* labels);
     
     // Get output probabilities
     const float* get_output() const;
+    
+    // Get output size
+    int get_output_size() const { return batch_size_ * num_classes_; }
     
     // Get loss value
     float get_loss() const;
@@ -34,59 +37,45 @@ public:
     // Load model parameters from file
     void load(const std::string& filename);
 
+    // Helper functions
+    void synchronize();
+
 private:
-    // Dimensions
-    int input_size_;
-    int hidden_size_;
-    int num_classes_;
+    // Model parameters
+    int input_size_;     // 784 for MNIST
+    int hidden_size_;    // 128 in our case
+    int num_classes_;    // 10 for MNIST
+    int batch_size_;     // 64 in our case
     
-    // Weights and biases (host memory)
-    std::vector<float> W1_host_; // Input -> Hidden weights
-    std::vector<float> b1_host_; // Hidden bias
-    std::vector<float> W2_host_; // Hidden -> Output weights
-    std::vector<float> b2_host_; // Output bias
+    // FC1 layer (input_size -> hidden_size)
+    float* fc1_weights_device_;    // hidden_size x input_size
+    float* fc1_bias_device_;       // hidden_size
+    float* fc1_output_device_;     // batch_size x hidden_size
     
-    // Weight gradients (host memory)
-    std::vector<float> dW1_host_;
-    std::vector<float> db1_host_;
-    std::vector<float> dW2_host_;
-    std::vector<float> db2_host_;
+    // FC2 layer (hidden_size -> num_classes)
+    float* fc2_weights_device_;    // num_classes x hidden_size
+    float* fc2_bias_device_;       // num_classes
+    float* fc2_output_device_;     // batch_size x num_classes
     
-    // Device memory pointers
-    float* W1_device_;
-    float* b1_device_;
-    float* W2_device_;
-    float* b2_device_;
+    // Gradients
+    float* grad_fc1_weights_device_;
+    float* grad_fc1_bias_device_;
+    float* grad_fc2_weights_device_;
+    float* grad_fc2_bias_device_;
     
-    float* dW1_device_;
-    float* db1_device_;
-    float* dW2_device_;
-    float* db2_device_;
-    
-    // Activations (device memory)
-    float* hidden_input_device_;  // Input to hidden layer
-    float* hidden_output_device_; // Output of hidden layer after ReLU
-    float* output_logits_device_; // Raw logits before softmax
-    float* output_probs_device_;  // Output probabilities after softmax
-    
-    // Gradients (device memory)
-    float* grad_output_device_;   // Gradient of loss w.r.t. output logits
-    float* grad_hidden_output_device_; // Gradient of loss w.r.t. hidden output
-    float* grad_hidden_input_device_;  // Gradient of loss w.r.t. hidden input
-    
-    // Loss (device memory)
-    float* loss_device_;
-    
-    // Loss value (host memory)
-    float loss_host_;
+    // Intermediate gradients
+    float* grad_fc1_output_device_;
+    float* grad_fc2_output_device_;
     
     // CUDA stream
     cudaStream_t stream_;
     
+    // CUDA handles
+    cublasHandle_t handle_;
+    
     // Helper functions
     void allocate_memory();
     void free_memory();
-    void copy_to_device();
-    void copy_from_device();
     void initialize_weights();
+    void update_weights(float learning_rate);
 }; 

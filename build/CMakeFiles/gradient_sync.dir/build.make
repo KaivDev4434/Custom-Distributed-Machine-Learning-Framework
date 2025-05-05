@@ -83,21 +83,53 @@ CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
+CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o: CMakeFiles/gradient_sync.dir/flags.make
+CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o: /course/2025/spring/ds/642/bader/kd454/Project/src/model/gradient_sync_bindings.cpp
+CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o: CMakeFiles/gradient_sync.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o"
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o -MF CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o.d -o CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o -c /course/2025/spring/ds/642/bader/kd454/Project/src/model/gradient_sync_bindings.cpp
+
+CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.i"
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /course/2025/spring/ds/642/bader/kd454/Project/src/model/gradient_sync_bindings.cpp > CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.i
+
+CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.s"
+	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /course/2025/spring/ds/642/bader/kd454/Project/src/model/gradient_sync_bindings.cpp -o CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.s
+
+CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o: CMakeFiles/gradient_sync.dir/flags.make
+CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o: /course/2025/spring/ds/642/bader/kd454/Project/src/model/cuda_kernels.cu
+CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o: CMakeFiles/gradient_sync.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CUDA object CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o"
+	/apps/easybuild/software/CUDA/12.0.0/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o -MF CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o.d -x cu -c /course/2025/spring/ds/642/bader/kd454/Project/src/model/cuda_kernels.cu -o CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o
+
+CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
+
 # Object files for target gradient_sync
 gradient_sync_OBJECTS = \
-"CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.o"
+"CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.o" \
+"CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o" \
+"CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o"
 
 # External object files for target gradient_sync
 gradient_sync_EXTERNAL_OBJECTS =
 
 lib/libgradient_sync.so: CMakeFiles/gradient_sync.dir/src/model/test_gradient_sync.cu.o
+lib/libgradient_sync.so: CMakeFiles/gradient_sync.dir/src/model/gradient_sync_bindings.cpp.o
+lib/libgradient_sync.so: CMakeFiles/gradient_sync.dir/src/model/cuda_kernels.cu.o
 lib/libgradient_sync.so: CMakeFiles/gradient_sync.dir/build.make
 lib/libgradient_sync.so: /apps/easybuild/software/CUDA/12.0.0/lib64/libcudart_static.a
 lib/libgradient_sync.so: /usr/lib64/librt.so
 lib/libgradient_sync.so: /project/kjc59/kd454/envs/apc_proj/lib/libpython3.12.so
 lib/libgradient_sync.so: /apps/easybuild/software/OpenMPI/4.1.4-GCC-12.2.0/lib/libmpi.so
 lib/libgradient_sync.so: CMakeFiles/gradient_sync.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CUDA shared library lib/libgradient_sync.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library lib/libgradient_sync.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gradient_sync.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

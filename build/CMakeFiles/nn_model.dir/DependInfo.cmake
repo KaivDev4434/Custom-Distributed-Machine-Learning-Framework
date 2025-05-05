@@ -8,13 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/course/2025/spring/ds/642/bader/kd454/Project/src/model/cuda_kernels.cu" "CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o" "gcc" "CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o.d"
-  "/course/2025/spring/ds/642/bader/kd454/Project/src/model/Model.cpp" "CMakeFiles/nn_model.dir/src/model/Model.cpp.o" "gcc" "CMakeFiles/nn_model.dir/src/model/Model.cpp.o.d"
   "/course/2025/spring/ds/642/bader/kd454/Project/src/model/bindings.cpp" "CMakeFiles/nn_model.dir/src/model/bindings.cpp.o" "gcc" "CMakeFiles/nn_model.dir/src/model/bindings.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/cuda_kernels.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

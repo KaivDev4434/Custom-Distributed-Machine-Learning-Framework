@@ -1,7 +1,6 @@
-/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/data_loader.dir
-/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/model.dir
-/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/gradient_sync.dir
-/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/utils.dir
+/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/cuda_kernels.dir
+/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/nn_model.dir
+/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/test_model.dir
 /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/edit_cache.dir
 /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/rebuild_cache.dir
 /course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles/list_install_components.dir

@@ -1,0 +1,2 @@
+/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ar qc libcuda_kernels.a CMakeFiles/cuda_kernels.dir/src/model/cuda_kernels_generated_Model.cu.o
+/apps/easybuild/software/binutils/2.39-GCCcore-12.2.0/bin/ranlib libcuda_kernels.a

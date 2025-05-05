@@ -69,38 +69,10 @@ include CMakeFiles/nn_model.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/nn_model.dir/flags.make
 
-CMakeFiles/nn_model.dir/src/model/Model.cpp.o: CMakeFiles/nn_model.dir/flags.make
-CMakeFiles/nn_model.dir/src/model/Model.cpp.o: /course/2025/spring/ds/642/bader/kd454/Project/src/model/Model.cpp
-CMakeFiles/nn_model.dir/src/model/Model.cpp.o: CMakeFiles/nn_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/nn_model.dir/src/model/Model.cpp.o"
-	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nn_model.dir/src/model/Model.cpp.o -MF CMakeFiles/nn_model.dir/src/model/Model.cpp.o.d -o CMakeFiles/nn_model.dir/src/model/Model.cpp.o -c /course/2025/spring/ds/642/bader/kd454/Project/src/model/Model.cpp
-
-CMakeFiles/nn_model.dir/src/model/Model.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nn_model.dir/src/model/Model.cpp.i"
-	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /course/2025/spring/ds/642/bader/kd454/Project/src/model/Model.cpp > CMakeFiles/nn_model.dir/src/model/Model.cpp.i
-
-CMakeFiles/nn_model.dir/src/model/Model.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nn_model.dir/src/model/Model.cpp.s"
-	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /course/2025/spring/ds/642/bader/kd454/Project/src/model/Model.cpp -o CMakeFiles/nn_model.dir/src/model/Model.cpp.s
-
-CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o: CMakeFiles/nn_model.dir/flags.make
-CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o: /course/2025/spring/ds/642/bader/kd454/Project/src/model/cuda_kernels.cu
-CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o: CMakeFiles/nn_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CUDA object CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o"
-	/apps/easybuild/software/CUDA/12.0.0/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o -MF CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o.d -x cu -c /course/2025/spring/ds/642/bader/kd454/Project/src/model/cuda_kernels.cu -o CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o
-
-CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
-
-CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
-
 CMakeFiles/nn_model.dir/src/model/bindings.cpp.o: CMakeFiles/nn_model.dir/flags.make
 CMakeFiles/nn_model.dir/src/model/bindings.cpp.o: /course/2025/spring/ds/642/bader/kd454/Project/src/model/bindings.cpp
 CMakeFiles/nn_model.dir/src/model/bindings.cpp.o: CMakeFiles/nn_model.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/nn_model.dir/src/model/bindings.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/nn_model.dir/src/model/bindings.cpp.o"
 	/apps/easybuild/software/GCCcore/12.2.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nn_model.dir/src/model/bindings.cpp.o -MF CMakeFiles/nn_model.dir/src/model/bindings.cpp.o.d -o CMakeFiles/nn_model.dir/src/model/bindings.cpp.o -c /course/2025/spring/ds/642/bader/kd454/Project/src/model/bindings.cpp
 
 CMakeFiles/nn_model.dir/src/model/bindings.cpp.i: cmake_force
@@ -113,26 +85,26 @@ CMakeFiles/nn_model.dir/src/model/bindings.cpp.s: cmake_force
 
 # Object files for target nn_model
 nn_model_OBJECTS = \
-"CMakeFiles/nn_model.dir/src/model/Model.cpp.o" \
-"CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o" \
 "CMakeFiles/nn_model.dir/src/model/bindings.cpp.o"
 
 # External object files for target nn_model
 nn_model_EXTERNAL_OBJECTS =
 
-python/nn_model.so: CMakeFiles/nn_model.dir/src/model/Model.cpp.o
-python/nn_model.so: CMakeFiles/nn_model.dir/src/model/cuda_kernels.cu.o
-python/nn_model.so: CMakeFiles/nn_model.dir/src/model/bindings.cpp.o
-python/nn_model.so: CMakeFiles/nn_model.dir/build.make
-python/nn_model.so: /apps/easybuild/software/CUDA/12.0.0/lib64/libcudart_static.a
-python/nn_model.so: /usr/lib64/librt.so
-python/nn_model.so: /apps/easybuild/software/Miniforge3/24.1.2-0/lib/libpython3.10.so
-python/nn_model.so: CMakeFiles/nn_model.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library python/nn_model.so"
+lib/nn_model.so: CMakeFiles/nn_model.dir/src/model/bindings.cpp.o
+lib/nn_model.so: CMakeFiles/nn_model.dir/build.make
+lib/nn_model.so: /apps/easybuild/software/CUDA/12.0.0/lib64/libcudart_static.a
+lib/nn_model.so: /usr/lib64/librt.so
+lib/nn_model.so: /apps/easybuild/software/CUDA/12.0.0/lib64/libcublas.so
+lib/nn_model.so: libcuda_kernels.a
+lib/nn_model.so: /project/kjc59/kd454/envs/apc_proj/lib/libpython3.12.so
+lib/nn_model.so: /apps/easybuild/software/CUDA/12.0.0/lib64/libcudart_static.a
+lib/nn_model.so: /usr/lib64/librt.so
+lib/nn_model.so: CMakeFiles/nn_model.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/course/2025/spring/ds/642/bader/kd454/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module lib/nn_model.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nn_model.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/nn_model.dir/build: python/nn_model.so
+CMakeFiles/nn_model.dir/build: lib/nn_model.so
 .PHONY : CMakeFiles/nn_model.dir/build
 
 CMakeFiles/nn_model.dir/clean:

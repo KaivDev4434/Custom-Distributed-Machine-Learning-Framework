@@ -13,6 +13,17 @@ cudaError_t cuda_check(cudaError_t result) {
     return result;
 }
 
+// Bias addition kernel
+__global__ void add_bias_kernel(float* output, const float* bias, int batch_size, int dim) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    int batch_idx = idx / dim;
+    int dim_idx = idx % dim;
+    
+    if (batch_idx < batch_size) {
+        output[batch_idx * dim + dim_idx] += bias[dim_idx];
+    }
+}
+
 // Matrix multiplication kernel (C = A * B)
 __global__ void matmul_kernel(const float* A, const float* B, float* C, int M, int N, int K) {
     // Shared memory for tile
@@ -111,26 +122,25 @@ __global__ void softmax_cross_entropy_kernel(const float* logits, const int* lab
     int batch_idx = blockIdx.x * blockDim.x + threadIdx.x;
     
     if (batch_idx < batch_size) {
-        // Find max logit for numerical stability
-        float max_logit = -INFINITY;
-        for (int c = 0; c < num_classes; ++c) {
-            max_logit = fmaxf(max_logit, logits[batch_idx * num_classes + c]);
+        // Find max for numerical stability
+        float max_val = -INFINITY;
+        for (int i = 0; i < num_classes; ++i) {
+            max_val = fmaxf(max_val, logits[batch_idx * num_classes + i]);
         }
         
-        // Compute softmax and cross entropy loss
-        float sum_exp = 0.0f;
-        for (int c = 0; c < num_classes; ++c) {
-            sum_exp += expf(logits[batch_idx * num_classes + c] - max_logit);
+        // Compute log-sum-exp
+        float log_sum_exp = 0.0f;
+        for (int i = 0; i < num_classes; ++i) {
+            log_sum_exp += expf(logits[batch_idx * num_classes + i] - max_val);
         }
+        log_sum_exp = logf(log_sum_exp) + max_val;
         
+        // Compute loss for this sample
         int label = labels[batch_idx];
-        float log_softmax = (logits[batch_idx * num_classes + label] - max_logit) - logf(sum_exp);
+        float sample_loss = log_sum_exp - logits[batch_idx * num_classes + label];
         
-        // Compute loss
-        float batch_loss = -log_softmax;
-        
-        // Use atomicAdd because multiple threads might update the same loss value
-        atomicAdd(loss, batch_loss / static_cast<float>(batch_size));
+        // Atomic add to total loss
+        atomicAdd(loss, sample_loss / batch_size);
     }
 }
 
@@ -140,15 +150,9 @@ __global__ void softmax_cross_entropy_backward_kernel(const float* probs, const 
     int batch_idx = idx / num_classes;
     int class_idx = idx % num_classes;
     
-    if (batch_idx < batch_size && class_idx < num_classes) {
+    if (batch_idx < batch_size) {
         int label = labels[batch_idx];
-        float grad = probs[batch_idx * num_classes + class_idx];
-        
-        if (class_idx == label) {
-            grad -= 1.0f;
-        }
-        
-        grad_input[batch_idx * num_classes + class_idx] = grad / static_cast<float>(batch_size);
+        grad_input[idx] = probs[idx] - (class_idx == label ? 1.0f : 0.0f);
     }
 }
 
@@ -167,6 +171,14 @@ __global__ void gradient_sync_kernel(float* gradients, int size, int num_gpus) {
 }
 
 // Wrapper functions to launch kernels
+
+cudaError_t add_bias(float* output, const float* bias, int batch_size, int dim, cudaStream_t stream) {
+    int blockSize = BLOCK_SIZE;
+    int numBlocks = (batch_size * dim + blockSize - 1) / blockSize;
+    
+    add_bias_kernel<<<numBlocks, blockSize, 0, stream>>>(output, bias, batch_size, dim);
+    return cudaGetLastError();
+}
 
 cudaError_t matmul(const float* A, const float* B, float* C, int M, int N, int K, cudaStream_t stream) {
     dim3 dimBlock(TILE_WIDTH, TILE_WIDTH);
